@@ -34,9 +34,9 @@ int main()
         break;
     default:
         cout << "Entrada inválida, por favor digite F para fácil, M para médio ou D para dificil" << endl;
-    }    
+    }
 
-    for(tentativas < 0; tentativas--;)
+    for (tentativas < 0; tentativas--;)
     {
         int chute;
 
