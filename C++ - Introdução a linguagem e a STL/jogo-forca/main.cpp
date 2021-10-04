@@ -3,15 +3,19 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <fstream>
+#include <ctime>
+#include <cstdlib>
+#include <limits>
 using namespace std;
 
-const string PALAVRA_SECRETA = "mingnon";
+string palavra_secreta;
 map<char, bool> ja_acertou;
 vector<char> chutes_errados;
 
 bool letra_existe(char palpite)
 {
-    for (char letra : PALAVRA_SECRETA)
+    for (char letra : palavra_secreta)
     {
         if (palpite == letra)
         {
@@ -68,7 +72,7 @@ void imprime_bonequinho(int erros)
 
 bool nao_ganhou()
 {
-    for (char letra : PALAVRA_SECRETA)
+    for (char letra : palavra_secreta)
     {
         if (!ja_acertou[letra])
         {
@@ -87,7 +91,7 @@ void resultado()
 {
     if (nao_enforcou())
     {
-        cout << "Parabéns! Você adivinhou a palavra secreta e ganhou o jogo!" << endl;
+        cout << "Parabéns! Você adivinhou a palavra secreta (" << palavra_secreta << ") e ganhou o jogo!" << endl;
     }
     else
     {
@@ -95,47 +99,83 @@ void resultado()
     }
 }
 
-int main()
+void imprime_erros()
 {
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    cout << "\nChutes errados: ";
+    for (char letra : chutes_errados)
+    {
+        cout << letra << " ";
+    }
+}
+
+void analisa_palpite()
+{
     char palpite;
 
-    cout << "******************************" << endl;
-    cout << "* Bem-vindo ao jogo da forca *" << endl;
-    cout << "******************************" << endl;
+    cout << "\nDigite uma letra que você acha que a palavra secreta tem: " << endl;
+    cin >> palpite;
 
-    while (nao_enforcou() && nao_ganhou())
+    if (letra_existe(palpite))
     {
-        cout << "Palavra secreta: ";
-        for (char letra : PALAVRA_SECRETA)
-        {
-            if (ja_acertou[letra])
-            {
-                cout << letra << " ";
-            }
-            else
-            {
-                cout << "_ ";
-            }
-        }
-        cout << "\nChutes errados: ";
-        for (char letra : chutes_errados)
+        cout << "Você acertou! A palavra secreta contém a letra " << palpite << endl;
+        ja_acertou[palpite] = true;
+    }
+    else
+    {
+        cout << "Você errou! A palavra secreta não contém a letra " << palpite << endl;
+        chutes_errados.push_back(palpite);
+    }
+}
+
+void imprime_palavra_secreta()
+{
+    cout << "Palavra secreta: ";
+    for (char letra : palavra_secreta)
+    {
+        if (ja_acertou[letra])
         {
             cout << letra << " ";
         }
-        cout << "\nDigite uma letra que você acha que a palavra secreta tem: " << endl;
-        cin >> palpite;
-
-        if (letra_existe(palpite))
-        {
-            cout << "Você acertou! A palavra secreta contém a letra " << palpite << endl;
-            ja_acertou[palpite] = true;
-        }
         else
         {
-            cout << "Você errou! A palavra secreta não contém a letra " << palpite << endl;
-            chutes_errados.push_back(palpite);
+            cout << "_ ";
         }
+    }
+}
+
+void imprime_cabecalho()
+{
+    cout << "******************************" << endl;
+    cout << "* Bem-vindo ao jogo da forca *" << endl;
+    cout << "******************************" << endl;
+}
+
+void selecionar_palavra_secreta_de_arquivo()
+{
+    fstream arquivo("palavras.txt");
+    srand(time(NULL));
+    int numero = rand() % 20;
+    arquivo.seekg(ios::beg);
+    for (int i = 0; i < numero - 1; ++i)
+    {
+        arquivo.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    arquivo >> palavra_secreta;
+}
+
+int main()
+{
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+
+    imprime_cabecalho();
+
+    selecionar_palavra_secreta_de_arquivo();
+
+    while (nao_enforcou() && nao_ganhou())
+    {
+        imprime_palavra_secreta();
+        imprime_erros();
+        analisa_palpite();
         imprime_bonequinho(chutes_errados.size());
     }
     resultado();
