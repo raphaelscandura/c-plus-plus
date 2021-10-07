@@ -1,87 +1,83 @@
 #include <iostream>
-#include <string>
-#include <map>
-#include <vector>
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
 #include <limits>
-
-using namespace std;
+#include "impressoes_forca.hpp"
 
 void imprime_bonequinho(int erros)
 {
     if (erros == 0)
     {
-        cout << "|-----|\n|\n|\n|" << endl;
+        std::cout << "|-----|\n|\n|\n|" << std::endl;
     }
     if (erros == 1)
     {
-        cout << "|-----|" << endl;
-        cout << "|    (0-0)\n|\n|" << endl;
+        std::cout << "|-----|" << std::endl;
+        std::cout << "|    (0-0)\n|\n|" << std::endl;
     }
     if (erros == 2)
     {
-        cout << "|-----|" << endl;
-        cout << "|    (0-0)" << endl;
-        cout << "|      |\n|" << endl;
+        std::cout << "|-----|" << std::endl;
+        std::cout << "|    (0-0)" << std::endl;
+        std::cout << "|      |\n|" << std::endl;
     }
     if (erros == 3)
     {
-        cout << "|-----|" << endl;
-        cout << "|    (0-0)" << endl;
-        cout << "|     \\|\n|" << endl;
+        std::cout << "|-----|" << std::endl;
+        std::cout << "|    (0-0)" << std::endl;
+        std::cout << "|     \\|\n|" << std::endl;
     }
     if (erros == 4)
     {
-        cout << "|-----|" << endl;
-        cout << "|    (0-0)" << endl;
-        cout << "|     \\|/\n|" << endl;
+        std::cout << "|-----|" << std::endl;
+        std::cout << "|    (0-0)" << std::endl;
+        std::cout << "|     \\|/\n|" << std::endl;
     }
     if (erros == 5)
     {
-        cout << "|-----|" << endl;
-        cout << "|    (0-0)" << endl;
-        cout << "|     \\|/" << endl;
-        cout << "|      /" << endl;
+        std::cout << "|-----|" << std::endl;
+        std::cout << "|    (0-0)" << std::endl;
+        std::cout << "|     \\|/" << std::endl;
+        std::cout << "|      /" << std::endl;
     }
     if (erros == 6)
     {
-        cout << "|-----|" << endl;
-        cout << "|    (X-X)" << endl;
-        cout << "|     \\|/" << endl;
-        cout << "|      /\\" << endl;
+        std::cout << "|-----|" << std::endl;
+        std::cout << "|    (X-X)" << std::endl;
+        std::cout << "|     \\|/" << std::endl;
+        std::cout << "|      /\\" << std::endl;
     }
 }
 
-void imprime_erros(vector<char> &chutes_errados)
+void imprime_erros(std::vector<char> &chutes_errados)
 {
-    cout << "\nChutes errados: ";
+    std::cout << "\nChutes errados: ";
     for (char letra : chutes_errados)
     {
-        cout << letra << " ";
+        std::cout << letra << " ";
     }
 }
 
-void imprime_palavra_secreta(map<char, bool> &ja_acertou, string palavra_secreta)
+void imprime_palavra_secreta(std::map<char, bool> &ja_acertou, std::string palavra_secreta)
 {
-    cout << "Palavra secreta: ";
+    std::cout << "Palavra secreta: ";
     for (char letra : palavra_secreta)
     {
         if (ja_acertou[letra])
         {
-            cout << letra << " ";
+            std::cout << letra << " ";
         }
         else
         {
-            cout << "_ ";
+            std::cout << "_ ";
         }
     }
 }
 
 void imprime_cabecalho()
 {
-    cout << "******************************" << endl;
-    cout << "* Bem-vindo ao jogo da forca *" << endl;
-    cout << "******************************" << endl;
+    std::cout << "******************************" << std::endl;
+    std::cout << "* Bem-vindo ao jogo da forca *" << std::endl;
+    std::cout << "******************************" << std::endl;
 }
