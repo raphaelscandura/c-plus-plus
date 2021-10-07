@@ -12,15 +12,13 @@ int main()
 
     imprime_cabecalho();
 
-    
-
-    while (nao_enforcou() && nao_ganhou())
+    while (nao_enforcou(chutes_errados) && nao_ganhou(ja_acertou, palavra_secreta))
     {
-        imprime_palavra_secreta();
-        imprime_erros();
-        analisa_palpite();
+        imprime_palavra_secreta(ja_acertou, palavra_secreta);
+        imprime_erros(chutes_errados);
+        analisa_palpite(palavra_secreta, ja_acertou, chutes_errados);
         imprime_bonequinho(chutes_errados.size());
     }
-    resultado();
+    resultado(chutes_errados, palavra_secreta);
     system("pause");
 }

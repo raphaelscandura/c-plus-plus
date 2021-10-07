@@ -6,11 +6,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <limits>
-using namespace std;
 
-string palavra_secreta;
-map<char, bool> ja_acertou;
-vector<char> chutes_errados;
+using namespace std;
 
 void imprime_bonequinho(int erros)
 {
@@ -57,7 +54,7 @@ void imprime_bonequinho(int erros)
     }
 }
 
-void imprime_erros()
+void imprime_erros(vector<char> &chutes_errados)
 {
     cout << "\nChutes errados: ";
     for (char letra : chutes_errados)
@@ -66,7 +63,7 @@ void imprime_erros()
     }
 }
 
-void imprime_palavra_secreta()
+void imprime_palavra_secreta(map<char, bool> &ja_acertou, string palavra_secreta)
 {
     cout << "Palavra secreta: ";
     for (char letra : palavra_secreta)
