@@ -2,11 +2,8 @@
 #include "Titular.hpp"
 
 Conta::Conta(std::string numero, std::string agencia, Titular titular)
+	:numero(numero), agencia(agencia), titular(titular), saldo(saldo)
 {
-	this->numero = numero;
-	this->agencia = agencia;
-	this->titular = titular;
-	this->saldo = 0.0;
 }
 
 void Conta::sacar(float valorSaque)

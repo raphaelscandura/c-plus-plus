@@ -1,9 +1,7 @@
 #include "Titular.hpp"
 
-Titular::Titular(std::string nome, std::string cpf)
+Titular::Titular(std::string nome, std::string cpf) :nome(nome), cpf(cpf)
 {
-	this->nome = nome;
-	this->cpf = cpf;
 }
 
 Titular::Titular()
