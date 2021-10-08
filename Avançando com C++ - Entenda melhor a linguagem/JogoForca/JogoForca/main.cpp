@@ -6,9 +6,9 @@ int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
-    std::string palavra_secreta = selecionar_palavra_secreta_de_arquivo();
-    std::map<char, bool> ja_acertou;
-    std::vector<char> chutes_errados;
+    static std::string palavra_secreta = selecionar_palavra_secreta_de_arquivo();
+    static std::map<char, bool> ja_acertou;
+    static std::vector<char> chutes_errados;
 
     imprime_cabecalho();
 
@@ -16,7 +16,7 @@ int main()
     {
         imprime_palavra_secreta(ja_acertou, palavra_secreta);
         imprime_erros(chutes_errados);
-        analisa_palpite(palavra_secreta, ja_acertou, chutes_errados);
+        Forca::analisa_palpite(palavra_secreta, ja_acertou, chutes_errados);
         imprime_bonequinho(chutes_errados.size());
     }
     resultado(chutes_errados, palavra_secreta);

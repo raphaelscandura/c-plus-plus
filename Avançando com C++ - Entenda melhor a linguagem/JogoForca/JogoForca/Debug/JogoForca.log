@@ -1,1 +1,6 @@
-﻿  JogoForca.vcxproj -> C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Entenda melhor a linguagem\JogoForca\Debug\JogoForca.exe
+﻿  impressoes_forca.cpp
+  main.cpp
+  verificacoes_forca.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Entenda melhor a linguagem\JogoForca\JogoForca\verificacoes_forca.cpp(16,15): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Gerando Código...
+  JogoForca.vcxproj -> C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Entenda melhor a linguagem\JogoForca\Debug\JogoForca.exe

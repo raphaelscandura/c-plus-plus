@@ -24,11 +24,11 @@ std::string selecionar_palavra_secreta_de_arquivo()
     return palavra_secreta;
 }
 
-bool nao_ganhou(std::map<char, bool> &ja_acertou, std::string palavra_secreta)
+bool nao_ganhou(const std::map<char, bool>& ja_acertou, const std::string& palavra_secreta)
 {
     for (char letra : palavra_secreta)
     {
-        if (!ja_acertou[letra])
+        if (ja_acertou.find(letra) == ja_acertou.end() || !ja_acertou.at(letra))
         {
             return true;
         }
@@ -36,12 +36,12 @@ bool nao_ganhou(std::map<char, bool> &ja_acertou, std::string palavra_secreta)
     return false;
 }
 
-bool nao_enforcou(std::vector<char> &chutes_errados)
+bool nao_enforcou(const std::vector<char>& chutes_errados)
 {
     return chutes_errados.size() != 6;
 }
 
-bool letra_existe(char palpite, std::string palavra_secreta)
+bool letra_existe(char palpite, const std::string& palavra_secreta)
 {
     for (char letra : palavra_secreta)
     {
@@ -53,27 +53,31 @@ bool letra_existe(char palpite, std::string palavra_secreta)
     return false;
 }
 
-void analisa_palpite(std::string palavra_secreta, std::map<char, bool> &ja_acertou, std::vector<char> &chutes_errados)
-
+namespace Forca
 {
-    char palpite;
+    void analisa_palpite(const std::string& palavra_secreta, std::map<char, bool>& ja_acertou, std::vector<char>& chutes_errados)
 
-    std::cout << "\nDigite uma letra que você acha que a palavra secreta tem: " << std::endl;
-    std::cin >> palpite;
+    {
+        char palpite;
 
-    if (letra_existe(palpite, palavra_secreta))
-    {
-        std::cout << "Você acertou! A palavra secreta contém a letra " << palpite << std::endl;
-        ja_acertou[palpite] = true;
+        std::cout << "\nDigite uma letra que você acha que a palavra secreta tem: " << std::endl;
+        std::cin >> palpite;
+
+        if (letra_existe(palpite, palavra_secreta))
+        {
+            std::cout << "Você acertou! A palavra secreta contém a letra " << palpite << std::endl;
+            ja_acertou[palpite] = true;
+        }
+        else
+        {
+            std::cout << "Você errou! A palavra secreta não contém a letra " << palpite << std::endl;
+            chutes_errados.push_back(palpite);
+        }
     }
-    else
-    {
-        std::cout << "Você errou! A palavra secreta não contém a letra " << palpite << std::endl;
-        chutes_errados.push_back(palpite);
-    }
+
 }
 
-void resultado(std::vector<char> &chutes_errados, std::string palavra_secreta)
+void resultado(const std::vector<char>& chutes_errados, const std::string& palavra_secreta)
 {
     if (nao_enforcou(chutes_errados))
     {

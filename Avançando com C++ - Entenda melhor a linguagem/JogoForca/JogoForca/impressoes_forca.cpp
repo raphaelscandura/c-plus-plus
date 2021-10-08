@@ -50,7 +50,7 @@ void imprime_bonequinho(int erros)
     }
 }
 
-void imprime_erros(std::vector<char> &chutes_errados)
+void imprime_erros(const std::vector<char> &chutes_errados)
 {
     std::cout << "\nChutes errados: ";
     for (char letra : chutes_errados)
@@ -59,12 +59,12 @@ void imprime_erros(std::vector<char> &chutes_errados)
     }
 }
 
-void imprime_palavra_secreta(std::map<char, bool> &ja_acertou, std::string palavra_secreta)
+void imprime_palavra_secreta(const std::map<char, bool> &ja_acertou, const std::string &palavra_secreta)
 {
     std::cout << "Palavra secreta: ";
     for (char letra : palavra_secreta)
     {
-        if (ja_acertou[letra])
+        if (ja_acertou.find(letra) != ja_acertou.end() && ja_acertou.at(letra))
         {
             std::cout << letra << " ";
         }
@@ -75,9 +75,3 @@ void imprime_palavra_secreta(std::map<char, bool> &ja_acertou, std::string palav
     }
 }
 
-void imprime_cabecalho()
-{
-    std::cout << "******************************" << std::endl;
-    std::cout << "* Bem-vindo ao jogo da forca *" << std::endl;
-    std::cout << "******************************" << std::endl;
-}
