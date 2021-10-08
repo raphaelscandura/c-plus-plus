@@ -1,12 +1,19 @@
 #include "Conta.hpp"
 #include "Titular.hpp"
+#include <iostream>
 
 int Conta::quantidadeDeContas = 0;
 
 Conta::Conta(std::string numero, std::string agencia, Titular titular)
 	:numero(numero), agencia(agencia), titular(titular), saldo(0)
 {
+	validaAgencia(agencia);
 	quantidadeDeContas++;
+}
+
+Conta::~Conta()
+{
+	quantidadeDeContas--;
 }
 
 void Conta::sacar(float valorSaque)
@@ -48,4 +55,13 @@ float Conta::getSaldo() const
 int Conta::getQuantidadeDeContas()
 {
 	return quantidadeDeContas;
+}
+
+void Conta::validaAgencia(std::string agencia)
+{
+	if (agencia.size() < 4)
+	{
+		std::cout << "Número da agência inválido" << std::endl;
+		exit(1);
+	}
 }

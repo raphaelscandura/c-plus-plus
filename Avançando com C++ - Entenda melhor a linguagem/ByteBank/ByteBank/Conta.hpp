@@ -11,6 +11,7 @@ private:
 	static int quantidadeDeContas;
 public:
 	Conta(std::string numero, std::string agencia, Titular titular);
+	~Conta();
 	void sacar(float valorSaque);
 	void depositar(float valorDeposito);
 	void transferir(Conta destino, float valorTransferencia);
@@ -19,4 +20,6 @@ public:
 	Titular getTitular() const;
 	float getSaldo() const;
 	static int getQuantidadeDeContas();
+private:
+	void validaAgencia(std::string agencia);
 };
