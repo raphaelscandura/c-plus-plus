@@ -8,7 +8,7 @@ private:
 
 public:
 	Titular();
-	Titular(std::string nome, std::string cpf);
+	explicit Titular(std::string nome, std::string cpf);
 	std::string getNome();
 	std::string getCpf();
 };
