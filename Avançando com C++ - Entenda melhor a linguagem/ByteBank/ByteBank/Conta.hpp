@@ -8,7 +8,7 @@ private:
 	std::string agencia;
 	Titular titular;
 	float saldo = 0;
-
+	static int quantidadeDeContas;
 public:
 	Conta(std::string numero, std::string agencia, Titular titular);
 	void sacar(float valorSaque);
@@ -18,4 +18,5 @@ public:
 	std::string getAgencia() const;
 	Titular getTitular() const;
 	float getSaldo() const;
+	static int getQuantidadeDeContas();
 };

@@ -1,9 +1,12 @@
 #include "Conta.hpp"
 #include "Titular.hpp"
 
+int Conta::quantidadeDeContas = 0;
+
 Conta::Conta(std::string numero, std::string agencia, Titular titular)
-	:numero(numero), agencia(agencia), titular(titular), saldo(saldo)
+	:numero(numero), agencia(agencia), titular(titular), saldo(0)
 {
+	quantidadeDeContas++;
 }
 
 void Conta::sacar(float valorSaque)
@@ -40,4 +43,9 @@ Titular Conta::getTitular() const
 float Conta::getSaldo() const
 {
 	return this->saldo;
+}
+
+int Conta::getQuantidadeDeContas()
+{
+	return quantidadeDeContas;
 }

@@ -11,5 +11,6 @@ int main()
 
 	std::cout << "Número: " << contaDoPedro.getNumero() << "\nAgência: " << contaDoPedro.getAgencia() << "\nTitular: " << contaDoPedro.getTitular().getNome() 
 		<< "\nCPF do Titular: " << contaDoPedro.getTitular().getCpf() << std::endl;
+	std::cout << "Quantidade de contas: " << Conta::getQuantidadeDeContas() << std::endl;
 	return 0;
 }
