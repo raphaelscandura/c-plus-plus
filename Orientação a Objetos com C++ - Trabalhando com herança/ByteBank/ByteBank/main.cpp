@@ -1,5 +1,6 @@
 #include "Conta.hpp"
 #include "Titular.hpp"
+#include "Funcionario.hpp"
 #include <iostream>
 #include <locale.h>
 
@@ -12,5 +13,9 @@ int main()
 	std::cout << "Número: " << contaDoPedro.getNumero() << "\nAgência: " << contaDoPedro.getAgencia() << "\nTitular: " << contaDoPedro.getTitular().getNome() 
 		<< "\nCPF do Titular: " << contaDoPedro.getTitular().getCpf() << std::endl;
 	std::cout << "Quantidade de contas: " << Conta::getQuantidadeDeContas() << std::endl;
+
+	Funcionario pedro("Pedro da Silva", "012.345.678-91");
+
+	std::cout << "Funcionario registrado: " << pedro.getNome() << " CPF: " << pedro.getCpf() << std::endl;
 	return 0;
 }
