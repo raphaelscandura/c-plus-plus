@@ -1,21 +1,6 @@
 #include "Titular.hpp"
+#include <string>
 
-Titular::Titular(std::string nome, std::string cpf) :nome(nome), cpf(cpf)
+Titular::Titular(std::string nome, std::string cpf): Pessoa(cpf, nome)
 {
-}
-
-Titular::Titular()
-{
-	this->nome = "";
-	this->cpf = "";
-}
-
-std::string Titular::getNome()
-{
-	return this->nome;
-}
-
-std::string Titular::getCpf()
-{
-	return this->cpf;
 }

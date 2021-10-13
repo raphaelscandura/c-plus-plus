@@ -1,15 +1,14 @@
 #pragma once
 #include <string>
-class Funcionario
+#include "Pessoa.hpp"
+
+class Funcionario: public Pessoa
 {
 private:
-	std::string nome;
-	std::string cpf;
+	float salario;
 
 public:
-	Funcionario();
-	explicit Funcionario(std::string nome, std::string cpf);
-	std::string getNome();
-	std::string getCpf();
+	explicit Funcionario(std::string nome, std::string cpf, float salario);
+	float getSalario() const;
 };
 

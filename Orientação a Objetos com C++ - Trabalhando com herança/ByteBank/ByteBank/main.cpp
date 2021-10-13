@@ -14,8 +14,8 @@ int main()
 		<< "\nCPF do Titular: " << contaDoPedro.getTitular().getCpf() << std::endl;
 	std::cout << "Quantidade de contas: " << Conta::getQuantidadeDeContas() << std::endl;
 
-	Funcionario pedro("Pedro da Silva", "012.345.678-91");
+	Funcionario pedro("Pedro da Silva", "012.345.678-91", 1112.5);
 
-	std::cout << "Funcionario registrado: " << pedro.getNome() << " CPF: " << pedro.getCpf() << std::endl;
+	std::cout << "Funcionario registrado: " << pedro.getNome() << " CPF: " << pedro.getCpf() << " Salário: R$" << pedro.getSalario() << std::endl;
 	return 0;
 }

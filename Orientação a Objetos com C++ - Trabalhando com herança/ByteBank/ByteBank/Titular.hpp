@@ -1,14 +1,12 @@
 #pragma once
 #include <string>
-class Titular
+#include "Pessoa.hpp"
+class Titular: public Pessoa
 {
 private:
 	std::string nome;
 	std::string cpf;
 
 public:
-	Titular();
 	explicit Titular(std::string nome, std::string cpf);
-	std::string getNome();
-	std::string getCpf();
 };
