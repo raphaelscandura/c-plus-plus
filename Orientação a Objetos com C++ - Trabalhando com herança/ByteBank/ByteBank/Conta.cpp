@@ -18,7 +18,11 @@ Conta::~Conta()
 
 void Conta::sacar(float valorSaque)
 {
-	this->saldo -= valorSaque;
+	if (valorSaque <= this->getSaldo() + (valorSaque * this->getTaxa()))
+	{
+		this->saldo -= valorSaque + (valorSaque * this->getTaxa());
+	}
+	
 }
 
 void Conta::depositar(float valorDeposito)
@@ -30,6 +34,11 @@ void Conta::transferir(Conta destino, float valorTransferencia)
 {
 	this->sacar(valorTransferencia);
 	destino.depositar(valorTransferencia);
+}
+
+float Conta::getTaxa() const
+{
+	return this->taxa;
 }
 
 std::string Conta::getNumero() const
