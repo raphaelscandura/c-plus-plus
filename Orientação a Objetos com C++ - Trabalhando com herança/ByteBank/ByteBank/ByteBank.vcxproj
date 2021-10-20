@@ -139,18 +139,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Caixa.hpp" />
     <ClInclude Include="Conta.hpp" />
     <ClInclude Include="ContaCorrente.hpp" />
     <ClInclude Include="ContaPoupanca.hpp" />
     <ClInclude Include="Funcionario.hpp" />
+    <ClInclude Include="Gerente.hpp" />
     <ClInclude Include="Pessoa.hpp" />
     <ClInclude Include="Titular.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Caixa.cpp" />
     <ClCompile Include="Conta.cpp" />
     <ClCompile Include="ContaCorrente.cpp" />
     <ClCompile Include="ContaPoupanca.cpp" />
     <ClCompile Include="Funcionario.cpp" />
+    <ClCompile Include="Gerente.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pessoa.cpp" />
     <ClCompile Include="Titular.cpp" />
