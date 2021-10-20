@@ -42,6 +42,9 @@
     <ClInclude Include="UsuarioAutenticavel.hpp">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="DiaDaSemana.hpp">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Conta.cpp">

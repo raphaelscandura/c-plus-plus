@@ -3,6 +3,7 @@
 #include "Titular.hpp"
 #include "Gerente.hpp"
 #include "Caixa.hpp"
+#include "DiaDaSemana.hpp"
 #include <iostream>
 #include <locale.h>
 
@@ -31,11 +32,11 @@ int main()
 	std::cout << std::endl;
 
 	
-	Gerente pedro("Pedro da Silva", "012.345.678-91", 1112.5, "pedrosilva", "@pedrosilva1985");
+	Gerente pedro("Pedro da Silva", "012.345.678-91", 1112.5, "pedrosilva", "@pedrosilva1985", DiaDaSemana::Sexta);
 
 	std::cout << "Gerente registrado: " << pedro.getNome() << " CPF: " << pedro.getCpf() << " Salário: R$" << pedro.getSalario() << std::endl;
 
-	Caixa joaquim("Joaquim Alves", "025.369.789-14", 950.0, "joaquimalves", "filhafavorita2005");
+	Caixa joaquim("Joaquim Alves", "025.369.789-14", 950.0, "joaquimalves", "filhafavorita2005", DiaDaSemana::Domingo);
 
 	std::cout << "Caixa registrado: " << joaquim.getNome() << " CPF: " << joaquim.getCpf() << " Salário: R$" << joaquim.getSalario() << std::endl;
 	
