@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Titular.hpp"
+
 class Conta
 {
 private:
@@ -16,6 +17,7 @@ public:
 	~Conta();
 	void sacar(float valorSaque);
 	void depositar(float valorDeposito);
+	void operator+=(float valorDeposito);
 	void transferir(Conta& destino, float valorTransferencia);
 	float getTaxa() const;
 	std::string getNumero() const;
@@ -23,6 +25,7 @@ public:
 	Titular getTitular() const;
 	float getSaldo() const;
 	static int getQuantidadeDeContas();
+	friend std::ostream& operator<<(std::ostream& cout, const Conta& conta);
 private:
 	void validaAgencia(std::string agencia);
 };

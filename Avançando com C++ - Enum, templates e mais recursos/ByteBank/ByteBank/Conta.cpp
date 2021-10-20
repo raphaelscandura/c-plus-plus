@@ -30,6 +30,11 @@ void Conta::depositar(float valorDeposito)
 	this->saldo += valorDeposito;
 }
 
+void Conta::operator+=(float valorDeposito)
+{
+	depositar(valorDeposito);
+}
+
 void Conta::transferir(Conta &destino, float valorTransferencia)
 {
 	this->sacar(valorTransferencia);

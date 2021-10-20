@@ -7,6 +7,20 @@
 #include <iostream>
 #include <locale.h>
 
+std::ostream& operator<<(std::ostream& cout, const Conta& conta)
+{
+	std::cout << "Número: " << conta.getNumero() << "\nAgência: " << conta.getAgencia() << "\nSaldo: " << conta.getSaldo()
+		<< "\nTitular: " << conta.getTitular().getNome() << "\nCPF do Titular: " << conta.getTitular().getCpf() << std::endl;
+	std::cout << std::endl;
+	return cout;
+};
+
+std::ostream& operator<<(std::ostream& cout, Funcionario& funcionario)
+{
+	std::cout << "Funcionario registrado: " << funcionario.getNome() << " CPF: " << funcionario.getCpf() << " Salário: R$" << funcionario.getSalario() << std::endl;
+	return cout;
+};
+
 int main()
 {
 	setlocale(LC_ALL, "pt_BR");
@@ -23,23 +37,17 @@ int main()
 	contaDaMaria.depositar(1000);
 	contaDaMaria.transferir(contaDoPedro, 200);
 
-	std::cout << "Número: " << contaDoPedro.getNumero() << "\nAgência: " << contaDoPedro.getAgencia() << "\nSaldo: " << contaDoPedro.getSaldo()
-		<< "\nTitular: " << contaDoPedro.getTitular().getNome() << "\nCPF do Titular: " << contaDoPedro.getTitular().getCpf() << std::endl;
-	std::cout << std::endl;	
+	contaDaMaria += 350.0;
 
-	std::cout << "\nNúmero: " << contaDaMaria.getNumero() << "\nAgência: " << contaDaMaria.getAgencia() << "\nSaldo: " << contaDaMaria.getSaldo() 
-		<<"\nTitular: " << contaDaMaria.getTitular().getNome() << "\nCPF do Titular: " << contaDaMaria.getTitular().getCpf() << std::endl;
-	std::cout << std::endl;
+	std::cout << contaDaMaria;	
 
+	std::cout << contaDoPedro;
 	
 	Gerente pedro("Pedro da Silva", "012.345.678-91", 1112.5, "pedrosilva", "@pedrosilva1985", DiaDaSemana::Sexta);
-
-	std::cout << "Gerente registrado: " << pedro.getNome() << " CPF: " << pedro.getCpf() << " Salário: R$" << pedro.getSalario() << std::endl;
-
 	Caixa joaquim("Joaquim Alves", "025.369.789-14", 950.0, "joaquimalves", "filhafavorita2005", DiaDaSemana::Domingo);
 
-	std::cout << "Caixa registrado: " << joaquim.getNome() << " CPF: " << joaquim.getCpf() << " Salário: R$" << joaquim.getSalario() << std::endl;
-	
+	std::cout << pedro;
+	std::cout << joaquim;	
 
 	return 0;
 }
