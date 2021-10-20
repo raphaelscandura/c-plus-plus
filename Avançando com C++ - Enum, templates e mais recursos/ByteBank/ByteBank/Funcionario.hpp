@@ -3,7 +3,7 @@
 #include "Pessoa.hpp"
 #include "DiaDaSemana.hpp"
 
-class Funcionario: public Pessoa
+class Funcionario: public Pessoa<std::string>
 {
 private:
 	float salario;

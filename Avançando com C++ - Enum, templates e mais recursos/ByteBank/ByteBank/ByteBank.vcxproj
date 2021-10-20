@@ -160,7 +160,6 @@
     <ClCompile Include="Funcionario.cpp" />
     <ClCompile Include="Gerente.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Pessoa.cpp" />
     <ClCompile Include="Titular.cpp" />
     <ClCompile Include="UsuarioAutenticavel.cpp" />
   </ItemGroup>

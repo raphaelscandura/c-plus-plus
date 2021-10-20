@@ -59,9 +59,6 @@
     <ClCompile Include="Funcionario.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Pessoa.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="ContaCorrente.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>

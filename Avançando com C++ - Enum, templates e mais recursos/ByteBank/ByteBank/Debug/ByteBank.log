@@ -1,2 +1,14 @@
-﻿  main.cpp
+﻿  Caixa.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Enum, templates e mais recursos\ByteBank\ByteBank\Caixa.cpp(9,28): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Conta.cpp
+  ContaCorrente.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Enum, templates e mais recursos\ByteBank\ByteBank\ContaCorrente.cpp(6,19): warning C4305: '=': truncation from 'double' to 'float'
+  ContaPoupanca.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Enum, templates e mais recursos\ByteBank\ByteBank\ContaPoupanca.cpp(6,19): warning C4305: '=': truncation from 'double' to 'float'
+  Funcionario.cpp
+  Gerente.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Enum, templates e mais recursos\ByteBank\ByteBank\Gerente.cpp(9,28): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Titular.cpp
+  main.cpp
+  Generating Code...
   ByteBank.vcxproj -> C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Avançando com C++ - Enum, templates e mais recursos\ByteBank\Debug\ByteBank.exe
