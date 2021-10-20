@@ -1,7 +1,10 @@
 #pragma once
 #include <string>
 #include <utility>
+#include <variant>
 #include "Titular.hpp"
+#include <variant>
+#include <variant>
 
 class Conta
 {
@@ -20,7 +23,7 @@ public:
 	};
 	explicit Conta(std::string numero, std::string agencia, Titular& titular);
 	~Conta();
-	std::pair<ResultadoSaque, float> sacar(float valorSaque);
+	std::variant<ResultadoSaque, float> sacar(float valorSaque);
 	void depositar(float valorDeposito);
 	void operator+=(float valorDeposito);
 	void transferir(Conta& destino, float valorTransferencia);
