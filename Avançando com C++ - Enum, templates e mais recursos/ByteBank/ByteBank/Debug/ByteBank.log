@@ -1,0 +1,10 @@
+﻿  Conta.cpp
+  ContaCorrente.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Orientação a Objetos com C++ - Trabalhando com herança\ByteBank\ByteBank\ContaCorrente.cpp(6,19): warning C4305: '=': truncation from 'double' to 'float'
+  ContaPoupanca.cpp
+C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Orientação a Objetos com C++ - Trabalhando com herança\ByteBank\ByteBank\ContaPoupanca.cpp(6,19): warning C4305: '=': truncation from 'double' to 'float'
+  main.cpp
+  Titular.cpp
+  UsuarioAutenticavel.cpp
+  Generating Code...
+  ByteBank.vcxproj -> C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\Orientação a Objetos com C++ - Trabalhando com herança\ByteBank\Debug\ByteBank.exe
