@@ -3,6 +3,6 @@
 class ContaPoupanca: public Conta
 {
 public:
-	ContaPoupanca(std::string numero, std::string agencia, Titular titular);
+	ContaPoupanca(std::string numero, std::string agencia, Titular& titular);
 };
 

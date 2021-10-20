@@ -12,7 +12,7 @@ private:
 protected:
 	float taxa = 0;
 public:
-	explicit Conta(std::string numero, std::string agencia, Titular titular);
+	explicit Conta(std::string numero, std::string agencia, Titular& titular);
 	~Conta();
 	void sacar(float valorSaque);
 	void depositar(float valorDeposito);

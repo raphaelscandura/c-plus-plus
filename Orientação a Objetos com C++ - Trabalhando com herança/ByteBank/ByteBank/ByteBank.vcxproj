@@ -147,6 +147,7 @@
     <ClInclude Include="Gerente.hpp" />
     <ClInclude Include="Pessoa.hpp" />
     <ClInclude Include="Titular.hpp" />
+    <ClInclude Include="UsuarioAutenticavel.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Caixa.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pessoa.cpp" />
     <ClCompile Include="Titular.cpp" />
+    <ClCompile Include="UsuarioAutenticavel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

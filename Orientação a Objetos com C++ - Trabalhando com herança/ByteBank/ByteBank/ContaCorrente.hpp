@@ -3,6 +3,6 @@
 class ContaCorrente: public Conta
 {
 public:
-	ContaCorrente(std::string numero, std::string agencia, Titular titular);
+	ContaCorrente(std::string numero, std::string agencia, Titular& titular);
 };
 

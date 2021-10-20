@@ -4,7 +4,7 @@
 
 int Conta::quantidadeDeContas = 0;
 
-Conta::Conta(std::string numero, std::string agencia, Titular titular)
+Conta::Conta(std::string numero, std::string agencia, Titular& titular)
 	:numero(numero), agencia(agencia), titular(titular), saldo(0)
 {
 	validaAgencia(agencia);

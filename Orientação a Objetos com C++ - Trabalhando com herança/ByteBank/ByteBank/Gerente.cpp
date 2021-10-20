@@ -1,6 +1,6 @@
 #include "Gerente.hpp"
 
-Gerente::Gerente(std::string nome, std::string cpf, float salario) : Funcionario(nome, cpf, salario)
+Gerente::Gerente(std::string nome, std::string cpf, float salario, std::string usuario, std::string senha) : Funcionario(nome, cpf, salario), UsuarioAutenticavel(usuario, senha)
 {
 }
 
