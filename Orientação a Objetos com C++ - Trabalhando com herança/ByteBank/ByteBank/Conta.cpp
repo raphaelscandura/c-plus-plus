@@ -30,7 +30,7 @@ void Conta::depositar(float valorDeposito)
 	this->saldo += valorDeposito;
 }
 
-void Conta::transferir(Conta destino, float valorTransferencia)
+void Conta::transferir(Conta &destino, float valorTransferencia)
 {
 	this->sacar(valorTransferencia);
 	destino.depositar(valorTransferencia);
