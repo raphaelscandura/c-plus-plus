@@ -21,6 +21,15 @@ std::ostream& operator<<(std::ostream& cout, Funcionario& funcionario)
 	return cout;
 };
 
+void RealizaSaque(Conta& conta)
+{
+	auto resultado = conta.sacar(200);
+	if (resultado.first == Conta::ResultadoSaque::Sucesso)
+	{
+		std::cout << "Novo saldo da conta: " << resultado.second << std::endl;
+	}
+}
+
 int main()
 {
 	setlocale(LC_ALL, "pt_BR");
@@ -39,15 +48,16 @@ int main()
 
 	contaDaMaria += 350.0;
 
-	std::cout << contaDaMaria;	
-
+	std::cout << contaDaMaria;
 	std::cout << contaDoPedro;
 	
 	Gerente pedro("Pedro da Silva", "012.345.678-91", 1112.5, "pedrosilva", "@pedrosilva1985", DiaDaSemana::Sexta);
 	Caixa joaquim("Joaquim Alves", "025.369.789-14", 950.0, "joaquimalves", "filhafavorita2005", DiaDaSemana::Domingo);
 
 	std::cout << pedro;
-	std::cout << joaquim;	
+	std::cout << joaquim;
+
+	RealizaSaque(contaDaMaria);
 
 	return 0;
 }

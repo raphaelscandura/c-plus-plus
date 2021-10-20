@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <utility>
 #include "Titular.hpp"
 
 class Conta
@@ -13,9 +14,13 @@ private:
 protected:
 	float taxa = 0;
 public:
+	enum class ResultadoSaque
+	{
+		Sucesso, ValorInvalido, SaldoInsuficiente
+	};
 	explicit Conta(std::string numero, std::string agencia, Titular& titular);
 	~Conta();
-	void sacar(float valorSaque);
+	std::pair<ResultadoSaque, float> sacar(float valorSaque);
 	void depositar(float valorDeposito);
 	void operator+=(float valorDeposito);
 	void transferir(Conta& destino, float valorTransferencia);

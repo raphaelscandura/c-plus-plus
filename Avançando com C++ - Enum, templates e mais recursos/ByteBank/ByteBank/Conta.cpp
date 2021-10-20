@@ -16,11 +16,20 @@ Conta::~Conta()
 	quantidadeDeContas--;
 }
 
-void Conta::sacar(float valorSaque)
+std::pair<Conta::ResultadoSaque, float> Conta::sacar(float valorSaque)
 {
-	if (valorSaque <= this->getSaldo() + (valorSaque * this->getTaxa()))
+	if (valorSaque <= 0)
+	{
+		return std::make_pair(ResultadoSaque::ValorInvalido, this->getSaldo());
+	}
+	else if (valorSaque >= this->getSaldo() + (valorSaque * this->getTaxa()))
+	{
+		return std::make_pair(ResultadoSaque::SaldoInsuficiente, this->getSaldo());
+	}
+	else 
 	{
 		this->saldo -= valorSaque + (valorSaque * this->getTaxa());
+		return std::make_pair(ResultadoSaque::Sucesso, this->getSaldo());
 	}
 	
 }
@@ -37,8 +46,11 @@ void Conta::operator+=(float valorDeposito)
 
 void Conta::transferir(Conta &destino, float valorTransferencia)
 {
-	this->sacar(valorTransferencia);
-	destino.depositar(valorTransferencia);
+	Conta::ResultadoSaque resultado = this->sacar(valorTransferencia).first;
+	if (resultado == ResultadoSaque::Sucesso)
+	{
+		destino.depositar(valorTransferencia);
+	}	
 }
 
 float Conta::getTaxa() const
