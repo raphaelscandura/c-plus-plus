@@ -10,7 +10,20 @@ const std::vector<Lance>& Leilao::recuperaLances() const
     return lances;
 }
 
+bool Leilao::primeiroLance() const
+{
+    return this->recuperaLances().empty();
+}
+   
+
 void Leilao::recebeLance(const Lance& lance)
 {
-    lances.push_back(lance);
+    if (this->primeiroLance())
+    {
+        lances.push_back(lance);
+    }
+    else if (lance.recuperaValor() > this->recuperaLances().back().recuperaValor())
+    {
+        lances.push_back(lance);
+    }    
 }

@@ -149,7 +149,7 @@
     <ClCompile Include="Avaliador.cpp" />
     <ClCompile Include="Lance.cpp" />
     <ClCompile Include="Leilao.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="test-avaliador.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
