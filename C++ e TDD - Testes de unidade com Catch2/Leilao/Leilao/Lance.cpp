@@ -4,7 +4,12 @@ Lance::Lance(Usuario usuario, float valor): usuario(usuario), valor(valor)
 {
 }
 
-float Lance::recuperaValor() const
+float Lance::getValor() const
 {
-    return valor;
+    return this->valor;
+}
+
+Usuario Lance::getUsuario() const
+{
+    return this->usuario;
 }

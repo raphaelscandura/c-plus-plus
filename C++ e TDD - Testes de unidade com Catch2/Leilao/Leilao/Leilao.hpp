@@ -10,7 +10,7 @@ private:
     std::string descricao;
 public:
     Leilao(std::string descricao);
-    const std::vector<Lance>& recuperaLances() const;
+    const std::vector<Lance>& getLances() const;
     void recebeLance(const Lance& lance);
     bool primeiroLance() const;
 };

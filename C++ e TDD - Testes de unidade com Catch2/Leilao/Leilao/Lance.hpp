@@ -8,5 +8,6 @@ private:
     float valor;
 public:
     Lance(Usuario usuario, float valor);
-    float recuperaValor() const;
+    float getValor() const;
+    Usuario getUsuario() const;
 };

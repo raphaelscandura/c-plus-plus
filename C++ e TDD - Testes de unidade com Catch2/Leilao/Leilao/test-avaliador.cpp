@@ -27,17 +27,34 @@ TEST_CASE("Validações da classe Avaliador")
 
 	SECTION("Deve proibir que um lance seja dado com valor menor do que o lance atual")
 	{
-		REQUIRE(leilao.recuperaLances().size() == 2);
+		REQUIRE(leilao.getLances().size() == 2);
 	}
 }
 
-TEST_CASE("Deve proibir lances menores ou iguais a zero")
+TEST_CASE("Validações da classe Leilão")
 {
 	Leilao leilao("Televisão");
-	Lance lanceNegativo(Usuario("Rafael Bragança"), -1);
-	leilao.recebeLance(lanceNegativo);
-	Lance lanceNulo(Usuario("Joaquim Ramos"), 0);
-	leilao.recebeLance(lanceNulo);
 
-	REQUIRE(leilao.recuperaLances().empty());
+	SECTION("Deve proibir lances menores ou iguais a zero")
+	{
+		Lance lanceNegativo(Usuario("Rafael Bragança"), -1);
+		leilao.recebeLance(lanceNegativo);
+		Lance lanceNulo(Usuario("Joaquim Ramos"), 0);
+		leilao.recebeLance(lanceNulo);
+
+		REQUIRE(leilao.getLances().empty());
+	}	
+
+	SECTION("Deve proibir que a mesma pessoa dê dois lances em sequência")
+	{
+		Usuario joaquim("Joaquim Ramos");
+
+		Lance primeiroLance(joaquim, 150);
+		Lance segundoLance(joaquim, 1500);
+
+		leilao.recebeLance(primeiroLance);
+		leilao.recebeLance(segundoLance);
+
+		REQUIRE(leilao.getLances().size() == 1);
+	}
 }

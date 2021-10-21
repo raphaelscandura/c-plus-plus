@@ -3,10 +3,10 @@
 
 void Avaliador::avalia(Leilao leilao)
 {
-	std::vector<Lance> lances = leilao.recuperaLances();
+	std::vector<Lance> lances = leilao.getLances();
 	if (!lances.empty()) {
-		this->maiorLance = lances.back().recuperaValor();
-		this->menorLance = lances.front().recuperaValor();
+		this->maiorLance = lances.back().getValor();
+		this->menorLance = lances.front().getValor();
 	}	
 }
 
