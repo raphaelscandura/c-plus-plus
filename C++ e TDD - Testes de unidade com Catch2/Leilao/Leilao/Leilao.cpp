@@ -1,4 +1,5 @@
 #include "Leilao.hpp"
+#include <iostream>
 
 Leilao::Leilao(std::string descricao): descricao(descricao)
 {
@@ -18,7 +19,16 @@ bool Leilao::primeiroLance() const
 
 void Leilao::recebeLance(const Lance& lance)
 {
-    if (lance.getValor() > 0) {
+    if (lance.getValor() <= 0) 
+    {
+        return;
+    }
+    else if (!this->primeiroLance() && this->getLances().back().getUsuario().getNome() == lance.getUsuario().getNome())
+    {
+        return;
+    }
+    else
+    {
         if (this->primeiroLance())
         {
             lances.push_back(lance);

@@ -1,4 +1,5 @@
 #include "Usuario.hpp"
+#include <iostream>
 
 Usuario::Usuario(std::string nome): nome(nome)
 {
