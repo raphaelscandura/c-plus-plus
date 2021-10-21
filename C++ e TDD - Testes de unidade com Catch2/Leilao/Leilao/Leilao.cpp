@@ -18,12 +18,15 @@ bool Leilao::primeiroLance() const
 
 void Leilao::recebeLance(const Lance& lance)
 {
-    if (this->primeiroLance())
-    {
-        lances.push_back(lance);
+    if (lance.recuperaValor() > 0) {
+        if (this->primeiroLance())
+        {
+            lances.push_back(lance);
+        }
+        else if (lance.recuperaValor() > this->recuperaLances().back().recuperaValor())
+        {
+            lances.push_back(lance);
+        }
     }
-    else if (lance.recuperaValor() > this->recuperaLances().back().recuperaValor())
-    {
-        lances.push_back(lance);
-    }    
+    
 }
