@@ -27,6 +27,9 @@
     <ClInclude Include="Usuario.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="catch2.hpp">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Avaliador.cpp">
@@ -44,5 +47,8 @@
     <ClCompile Include="test-avaliador.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,8 @@
+#define CATCH_CONFIG_MAIN
+#include "catch2.hpp"
 #include "Avaliador.hpp"
-#include <iostream>
 
-int main()
+TEST_CASE("Deve recuperar maior lance dado no leilao")
 {
 	Leilao leilao("Televisão");
 	Lance primeiroLance(Usuario("Rafael Bragança"), 100);
@@ -14,7 +15,5 @@ int main()
 	Avaliador leiloeiro;
 	leiloeiro.avalia(leilao);	
 
-	std::cout << leiloeiro.getMaiorLance() << std::endl;
-
-	return 0;
+	REQUIRE(leiloeiro.getMaiorLance() == 150);
 }

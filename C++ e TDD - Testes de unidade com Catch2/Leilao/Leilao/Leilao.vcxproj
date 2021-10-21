@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Avaliador.hpp" />
+    <ClInclude Include="catch2.hpp" />
     <ClInclude Include="Lance.hpp" />
     <ClInclude Include="Leilao.hpp" />
     <ClInclude Include="Usuario.hpp" />
@@ -151,6 +152,9 @@
     <ClCompile Include="Leilao.cpp" />
     <ClCompile Include="test-avaliador.cpp" />
     <ClCompile Include="Usuario.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
