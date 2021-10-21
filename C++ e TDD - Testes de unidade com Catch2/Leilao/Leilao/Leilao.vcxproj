@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\C++ e TDD - Testes de unidade com Catch2\Leilao\Leilao;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,14 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Leilao\Lance.hpp" />
-    <ClInclude Include="..\..\..\..\..\..\Leilao\Leilao.hpp" />
-    <ClInclude Include="..\..\..\..\..\..\Leilao\Usuario.hpp" />
+    <ClInclude Include="Avaliador.hpp" />
+    <ClInclude Include="Lance.hpp" />
+    <ClInclude Include="Leilao.hpp" />
+    <ClInclude Include="Usuario.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\Leilao\Lance.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Leilao\Leilao.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Leilao\Usuario.cpp" />
+    <ClCompile Include="Avaliador.cpp" />
+    <ClCompile Include="Lance.cpp" />
+    <ClCompile Include="Leilao.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
