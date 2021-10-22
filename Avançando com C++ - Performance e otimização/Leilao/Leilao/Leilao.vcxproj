@@ -89,6 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\rapha\Desktop\The Shire\Projetos\Alura - Fromação Linguagem C++\C++ e TDD - Testes de unidade com Catch2\Leilao\Leilao;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,7 +142,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Avaliador.hpp" />
-    <ClInclude Include="catch2.hpp" />
     <ClInclude Include="Lance.hpp" />
     <ClInclude Include="Leilao.hpp" />
     <ClInclude Include="Usuario.hpp" />
@@ -150,7 +150,7 @@
     <ClCompile Include="Avaliador.cpp" />
     <ClCompile Include="Lance.cpp" />
     <ClCompile Include="Leilao.cpp" />
-    <ClCompile Include="test-avaliador.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
