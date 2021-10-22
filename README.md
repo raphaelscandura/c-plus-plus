@@ -17,7 +17,7 @@ Com a orientação a objetos na ponta da língua, é hora de evoluirmos com noss
 # Instrutores desta formação
 - Gabriel Fernandes de Oliveira
 - Vinicius Dias
-<!--
+
 # Meu progresso na formação
-Formação completa, certificado disponível [aqui](link do certificado).
--->
+Formação completa, certificado disponível [aqui](https://cursos.alura.com.br/degree/certificate/257b7ce8-7c3f-47f8-bd1c-81b8d7299d5e).
+
